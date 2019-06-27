@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorSecondaryDark</item>
+    </style>
+
+    <style name="TitleText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="SubTitleText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="SubSubTitleText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="GrayTitleText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">#B4B4B4</item>
+    </style>
+
+    <style name="CommunityUsernameText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="CommunityContentText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="CommunityTabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabBackground">@color/colorWhite</item>
+        <item name="tabIndicatorColor">#64DD17</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabSelectedTextColor">#64DD17</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+</resources>
