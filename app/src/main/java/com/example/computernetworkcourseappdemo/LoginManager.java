@@ -1,8 +1,6 @@
 package com.example.computernetworkcourseappdemo;
 
 import android.content.Context;
-import android.os.Environment;
-import android.os.Parcelable;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -17,9 +15,6 @@ import org.json.JSONObject;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

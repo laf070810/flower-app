@@ -27,6 +27,8 @@
         <activity android:name=".activities.ChangePasswordActivity" />
         <activity android:name=".activities.PersonalPageActivity" />
         <activity android:name=".activities.ModifyPersonalDataActivity" />
+        <activity android:name=".activities.BigImageActivity" />
+        <activity android:name=".activities.PublishBigImageActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

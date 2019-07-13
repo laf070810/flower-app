@@ -90,4 +90,12 @@
     <string name="modify_personal_data_dialog_title">修改中</string>
     <string name="modify_personal_data_dialog_failed">修改失败</string>
     <string name="modify_personal_data_dialog_cancel">取消</string>
+    <string name="media_picker_select_from">插入图片:</string>
+    <string name="media_picker_camera">相机</string>
+    <string name="media_picker_gallery">图库</string>
+    <string name="media_picker_ok">确定</string>
+    <string name="media_picker_cancel">取消</string>
+    <string name="media_picker_some_permission_is_denied">权限不足</string>
+    <string name="media_picker_you_need_to_grant_access_to">应用需要获取以下权限：</string>
+    <string name="media_picker_read_Write_external_storage"><![CDATA[读写外部存储]]></string>
 </resources>

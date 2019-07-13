@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
@@ -14,7 +15,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,12 +29,12 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.example.computernetworkcourseappdemo.CommunityRvAdapter;
+import com.example.computernetworkcourseappdemo.CommunityRvItemDecoration;
 import com.example.computernetworkcourseappdemo.CommunityVpAdapter;
 import com.example.computernetworkcourseappdemo.HomepageRvAdapter;
 import com.example.computernetworkcourseappdemo.LoginManager;
 import com.example.computernetworkcourseappdemo.R;
-import com.example.computernetworkcourseappdemo.CommunityRvAdapter;
-import com.example.computernetworkcourseappdemo.CommunityRvItemDecoration;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         titles.add(getResources().getString(R.string.main_community_tab_follow));
         CommunityVp.setAdapter(new CommunityVpAdapter(listSwipe, titles));
 
-        communityRvAdapters[0] = new CommunityRvAdapter(rqRequestQueue);
+        communityRvAdapters[0] = new CommunityRvAdapter(this, rqRequestQueue);
         CommunityRv[0].setAdapter(communityRvAdapters[0]);
         CommunityRv[0].setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
         CommunityRv[0].addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL));
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        communityRvAdapters[1] = new CommunityRvAdapter(rqRequestQueue);
+        communityRvAdapters[1] = new CommunityRvAdapter(this, rqRequestQueue);
         CommunityRv[1].setAdapter(communityRvAdapters[1]);
         CommunityRv[1].setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
         CommunityRv[1].addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL));
