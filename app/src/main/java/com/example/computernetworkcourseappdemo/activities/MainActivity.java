@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     TextView MinePersonalPage;
 
     //    Declare important objects.
-    private RequestQueue rqRequestQueue;
-    private LoginManager lmLoginManager;
+    public RequestQueue rqRequestQueue;
+    public LoginManager lmLoginManager;
 
     //    Declare constants.
     public static final int REQUEST_CODE_LOGIN = 100;
@@ -97,9 +97,20 @@ public class MainActivity extends AppCompatActivity {
                     layoutContent.addView(viewHomepage);
                     return true;
                 case R.id.navigation_community:
-                    layoutContent.removeAllViews();
-                    layoutContent.addView(viewCommunity);
-                    return true;
+                    if (lmLoginManager.isLoggedIn()) {
+                        layoutContent.removeAllViews();
+                        layoutContent.addView(viewCommunity);
+                        return true;
+                    } else if (lmLoginManager.isCached()) {
+                        loginWithToast();
+                        layoutContent.removeAllViews();
+                        layoutContent.addView(viewCommunity);
+                        return true;
+                    } else {
+                        Intent it = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivityForResult(it, REQUEST_CODE_LOGIN);
+                        return false;
+                    }
                 case R.id.navigation_course:
                     layoutContent.removeAllViews();
                     layoutContent.addView(viewCourse);
@@ -264,23 +275,11 @@ public class MainActivity extends AppCompatActivity {
         btCommunityPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (lmLoginManager.isLoggedIn()) {
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("User", lmLoginManager.getUser());
-                    Intent it = new Intent(MainActivity.this, PublishActivity.class);
-                    it.putExtras(bundle);
-                    startActivityForResult(it, REQUEST_CODE_PUBLISH);
-                } else if (lmLoginManager.isCached()) {
-                    loginWithToast();
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("User", lmLoginManager.getUser());
-                    Intent it = new Intent(MainActivity.this, PublishActivity.class);
-                    it.putExtras(bundle);
-                    startActivityForResult(it, REQUEST_CODE_PUBLISH);
-                } else {
-                    Intent it = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivityForResult(it, REQUEST_CODE_LOGIN);
-                }
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("User", lmLoginManager.getUser());
+                Intent it = new Intent(MainActivity.this, PublishActivity.class);
+                it.putExtras(bundle);
+                startActivityForResult(it, REQUEST_CODE_PUBLISH);
             }
         });
 

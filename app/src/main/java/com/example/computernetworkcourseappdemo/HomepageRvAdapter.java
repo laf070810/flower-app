@@ -65,7 +65,7 @@ public class HomepageRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         Iterator<String> ite = data.keys();
                         while (ite.hasNext()) {
                             String index = ite.next();
-//                            DataSource.add(new CommunityData(data.getJSONObject(index).getString("nickname"), data.getJSONObject(index).getString("body")));
+//                            DataSource.add(new PostData(data.getJSONObject(index).getString("nickname"), data.getJSONObject(index).getString("body")));
                         }
                     } catch (JSONException e) { e.printStackTrace(); }
 
